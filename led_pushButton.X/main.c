@@ -21,6 +21,14 @@
 
 void main(void) {
     
-    TRISA = 0b00000001; // DEFINE FIRST BIT TRISA LIKE INPUT
+    TRISAbits.TRISA0 = 1; // DEFINE FIRST BIT TRISA LIKE INPUT
+    TRISBbits.TRISB0 = 0; // DEFINE FIRST BIT TRISB LIKE OUTPUT
+    int INPUT = TRISAbits.TRISA0;
+    
+    while(1) {
+        if(INPUT) {
+            PORTAbits.RA0 = 1;
+        }
+    }
     return;
 }
